@@ -3,6 +3,15 @@ require("jj.lazy")
 
 vim.cmd[[colorscheme tokyonight-storm]]
 vim.cmd[[set number]]
+vim.cmd[[set relativenumber]]
+vim.cmd[[set tabstop=4]]
+vim.cmd[[set softtabstop=4]]
+vim.cmd[[set shiftwidth=4]]
+vim.cmd[[set hlsearch]]
+vim.cmd[[set expandtab]]
+vim.cmd[[set autoindent]]
+
+vim.cmd[[let g:netrw_liststyle=3]]
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)

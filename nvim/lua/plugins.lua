@@ -1,8 +1,8 @@
 return {
 	{
-		'nvim-telescope/telescope.nvim', 
-		tag = '0.1.6', 
-		dependencies = { 
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.6',
+		dependencies = {
 			'nvim-lua/plenary.nvim'
 		},
 		config = function()
@@ -14,13 +14,13 @@ return {
 	{
     		"nvim-treesitter/nvim-treesitter",
     		build = ":TSUpdate",
-    		config = function () 
+    		config = function ()
       		local configs = require("nvim-treesitter.configs")
       		configs.setup({
           		ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "go", "html" },
           		sync_install = true,
           		highlight = { enable = true },
-          		indent = { enable = true },  
+          		indent = { enable = true },
         	})
     		end
  	},
@@ -29,6 +29,12 @@ return {
   		lazy = false,
   		priority = 1000,
   		opts = {},
+	},
+	{
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup()
+		end
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -75,5 +81,17 @@ return {
 				)
   			})
 		end
+	},
+	{
+		"vimwiki/vimwiki",
+		init = function() 
+        		vim.g.vimwiki_list = {
+            			{
+            			path = '~/wiki',
+            			syntax = 'markdown',
+            			ext = '.md',
+            			},
+        		}
+    		end
 	}
  }
